@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/info', function () {
+    // Base Url info (Laravel URL uses absolute path)
+    $baseUrl = URL::to('/');
+    return "BaseUrl: {$baseUrl}";
+});
+
+Route::get('/test-db', function () {
+    // You need to set database followed README.md first
+    $activeRecord = \App\Models\Records::first();
+    // Result handler
+    if ($activeRecord)
+        return $activeRecord->toArray();
+    else
+        return var_export($activeRecord, true);
+});
