@@ -30,3 +30,7 @@ Route::get('/test-db', function () {
     else
         return var_export($activeRecord, true);
 });
+
+Route::resources([
+    'rest' => 'RestController',
+]);

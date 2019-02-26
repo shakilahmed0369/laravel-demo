@@ -84,6 +84,7 @@
 
                 <div class="links">
                     <a href="{{ url('/info') }}">App-Info</a>
+                    <a href="{{ url('/rest') }}">REST</a>
                     <a href="{{ url('/test-db') }}">Test-DB</a>
                 </div>
             </div>
