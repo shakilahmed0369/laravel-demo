@@ -16,10 +16,8 @@ class DiController extends Controller
      */
     public function index(FooInterface $bar)
     {
-        App::singleton('App\Http\Controllers\Bar');
-        App::bind('App\Http\Controllers\FooInterface', 'App\Http\Controllers\Bar');
         
-        App::bind('App\Http\Controllers\FooInterface', 'App\Http\Controllers\Foo');
+        App::singleton('App\Http\Controllers\Bar');
         App::bind('App\Http\Controllers\FooInterface', 'App\Http\Controllers\Bar');
         $foo = App::make('App\Http\Controllers\Foo');
         $foo = App::make('App\Http\Controllers\Foo');

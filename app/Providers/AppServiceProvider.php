@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        App::bind('\App\Http\Controllers\FooInterface', '\App\Http\Controllers\Bar');
+        \App::bind('App\Http\Controllers\FooInterface', 'App\Http\Controllers\Bar');
     }
 }
