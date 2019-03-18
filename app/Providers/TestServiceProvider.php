@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class TestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        App::bind('\App\Http\Controllers\FooInterface', '\App\Http\Controllers\Bar');
+        // echo 'ff';exit;
     }
 }

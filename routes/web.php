@@ -34,3 +34,5 @@ Route::get('/test-db', function () {
 Route::resources([
     'rest' => 'RestController',
 ]);
+
+Route::get('/di', 'DiController@index');
