@@ -34,7 +34,10 @@ class RestController extends Controller
      */
     public function store(Request $request)
     {
-        var_dump(['$request->all()' => $request->all()]);
+        $output['headers'] = $request->headers->all();
+        $output['input'] = $request->input();
+        $output['files'] = $_FILES;
+        return response()->json($output);
     }
 
     /**
@@ -45,7 +48,8 @@ class RestController extends Controller
      */
     public function show($id)
     {
-        var_dump(['$id' => $id]);
+        $output['$id'] = $id;
+        return response()->json($output);
     }
 
     /**
@@ -56,7 +60,8 @@ class RestController extends Controller
      */
     public function edit($id)
     {
-        var_dump(['$id' => $id]);
+        $output['$id'] = $id;
+        return response()->json($output);
     }
 
     /**
@@ -68,7 +73,11 @@ class RestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        var_dump(['$id' => $id, '$request->all()' => $request->all()]);
+        $output['$id'] = $id;
+        $output['headers'] = $request->headers->all();
+        $output['input'] = $request->input();
+        $output['files'] = $_FILES;
+        return response()->json($output);
     }
 
     /**
@@ -79,6 +88,7 @@ class RestController extends Controller
      */
     public function destroy($id)
     {
-        var_dump(['$id' => $id]);
+        $output['$id'] = $id;
+        return response()->json($output);
     }
 }
